@@ -1,0 +1,15 @@
+[gd_scene load_steps=4 format=3 uid="uid://bc4r8qif7osoo"]
+
+[ext_resource type="PackedScene" uid="uid://caxvgref3t5ld" path="res://main_display.tscn" id="1_1e4h7"]
+[ext_resource type="Script" path="res://main.gd" id="1_y7fdj"]
+[ext_resource type="PackedScene" uid="uid://d1syumudd3v8s" path="res://world.tscn" id="2_dqkph"]
+
+[node name="Main" type="Node"]
+script = ExtResource("1_y7fdj")
+
+[node name="MainDisplay" parent="." instance=ExtResource("1_1e4h7")]
+viewport_path = NodePath("../SubViewport")
+
+[node name="SubViewport" type="SubViewport" parent="."]
+
+[node name="World" parent="SubViewport" instance=ExtResource("2_dqkph")]

@@ -1,0 +1,32 @@
+[gd_scene load_steps=4 format=3 uid="uid://caxvgref3t5ld"]
+
+[ext_resource type="Script" path="res://main_display.gd" id="1_4vahn"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_phgv4"]
+
+[sub_resource type="Texture2DRD" id="Texture2DRD_m63gp"]
+
+[node name="MainDisplay" type="TabContainer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_phgv4")
+current_tab = 0
+tabs_visible = false
+script = ExtResource("1_4vahn")
+
+[node name="DefaultRenderTextureRect" type="TextureRect" parent="."]
+unique_name_in_owner = true
+layout_mode = 2
+stretch_mode = 2
+metadata/_tab_index = 0
+
+[node name="RadianceCascadesTexture" type="TextureRect" parent="."]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+texture = SubResource("Texture2DRD_m63gp")
+stretch_mode = 2
+metadata/_tab_index = 1

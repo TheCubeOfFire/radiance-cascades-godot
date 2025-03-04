@@ -1,0 +1,64 @@
+[gd_scene load_steps=5 format=3 uid="uid://d1syumudd3v8s"]
+
+[ext_resource type="Script" path="res://world.gd" id="1_sgaxn"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_d7ci5"]
+albedo_color = Color(0.464648, 0.572517, 0.941808, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xh2dc"]
+albedo_color = Color(0.791227, 0.318557, 0.361389, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bjm44"]
+albedo_color = Color(0.882128, 0.726127, 0.314327, 1)
+
+[node name="World" type="Node3D"]
+script = ExtResource("1_sgaxn")
+camera_path = NodePath("Camera3D")
+light_path = NodePath("DirectionalLight3D")
+
+[node name="Floor" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 45.385, -0.5, -56.135)
+visible = false
+size = Vector3(200, 1, 200)
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, -1.1)
+sides = 16
+material = SubResource("StandardMaterial3D_d7ci5")
+
+[node name="CSGTorus3D" type="CSGTorus3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 0.2, 0.1)
+sides = 16
+material = SubResource("StandardMaterial3D_xh2dc")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="."]
+transform = Transform3D(0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, 0.707107, 0.3, 0.5, 1.2)
+material = SubResource("StandardMaterial3D_bjm44")
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="."]
+size = Vector3(0.5, 0.5, 0.5)
+material = SubResource("StandardMaterial3D_bjm44")
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0)
+size = Vector3(0.5, 0.5, 0.5)
+material = SubResource("StandardMaterial3D_bjm44")
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+size = Vector3(0.5, 0.5, 0.5)
+material = SubResource("StandardMaterial3D_bjm44")
+
+[node name="CSGBox3D5" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1)
+size = Vector3(0.5, 0.5, 0.5)
+material = SubResource("StandardMaterial3D_bjm44")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(0.866025, 0.353553, -0.353553, 0, 0.707107, 0.707107, 0.5, -0.612372, 0.612372, -2.18787, 3.35858, 3.13258)
+current = true
+far = 20.0
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.293429, 0.647456, -0.703349, -0.483512, 0.53418, 0.693446, 0.824691, 0.543555, 0.156309, 0, 5, 0)
+shadow_enabled = true

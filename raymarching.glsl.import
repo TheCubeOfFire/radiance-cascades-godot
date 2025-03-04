@@ -1,0 +1,14 @@
+[remap]
+
+importer="glsl"
+type="RDShaderFile"
+uid="uid://cdiyqg6q4tww1"
+path="res://.godot/imported/raymarching.glsl-c3a15e8acbf1ebeefbb33959c03fbf68.res"
+
+[deps]
+
+source_file="res://raymarching.glsl"
+dest_files=["res://.godot/imported/raymarching.glsl-c3a15e8acbf1ebeefbb33959c03fbf68.res"]
+
+[params]
+
